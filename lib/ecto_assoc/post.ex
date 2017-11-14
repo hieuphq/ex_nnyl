@@ -8,6 +8,7 @@ defmodule EctoAssoc.Post do
     field :body, :string
 
     belongs_to :user, EctoAssoc.User, foreign_key: :user_id, type: :binary_id
+    many_to_many :tags, EctoAssoc.Tag, join_through: "posts_tags", on_replace: :delete
   end
 
   @fields ~w(header body)
