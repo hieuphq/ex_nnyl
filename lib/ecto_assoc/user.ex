@@ -8,6 +8,7 @@ defmodule EctoAssoc.User do
     field :email, :string
 
     has_one :avatar, EctoAssoc.Avatar
+    has_many :posts, EctoAssoc.Post
 
     timestamps()
   end
@@ -18,5 +19,6 @@ defmodule EctoAssoc.User do
     data
     |> cast(params, @fields)
     |> validate_required([:name, :email])
+    |> put_assoc(:posts, params[:posts])
   end
 end

@@ -20,3 +20,8 @@ defmodule EctoAssoc.Avatar do
     |> validate_required([:nick_name, :pic_url])
   end
 end
+
+# alias EctoAssoc.{Repo, User, Avatar}
+# avatar = %Avatar{nick_name: "HP", pic_url: "http://elixir-lang.org/images/logo.png"}
+# user = %User{name: "TT", email: "tt@gmail.com", avatar: avatar}
+# Repo.all(User) |> Repo.preload(:avatar)
